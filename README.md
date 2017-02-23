@@ -50,21 +50,36 @@ idea que atributos pueden estar llegando en ese array O.o ,
 para saberlo tendrías que hacer seguimiento al código.
 
 Con este paquete lo primero que crearías es una clase que extienda de 
-ObjectMap donde definimos los atributos de nuestro objeto.
+ObjectMap donde definimos los atributos de nuestro objeto desde los comentarios 
+de la clase, podemos poner un valor default.
+
+Si desea también puede declarar mutator y accesors como se hace en los Model de Laravel.
 
 ```
 use Oscarsan\ObjectMap\ObjectMap;
 
+/**
+ * @property $name
+ * @property $company "PHP Company"
+ * @property $document_type
+ * @property $document_number
+ * @property $city
+ * @property $state
+ * @property $country
+ * @property $car
+ */
+ 
 class CustomerMap extends ObjectMap
 {
-    public $name = '';
-    public $company = 'PHP Company';
-    public $document_type;
-    public $document_number;
-    public $city;
-    public $state;
-    public $country;
-    public $car;
+    public function getDocumentTypeAttribute($value)
+    {
+        return strtoupper($value);
+    }
+    public function setCityAttribute($value)
+    {
+        if($value == 'Moscú')
+            $this->attributes['country'] = 'Rusia';
+    }
 }
 ```
 Con lo anterior hemos definido las propiedades del objeto, también hemos 

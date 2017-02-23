@@ -3,7 +3,7 @@
 namespace Oscarricardosan\ObjectMap\Tests;
 
 
-use Oscarricardosan\ObjectMap\Tests\ExamplesClasses\BasicExample;
+use Oscarricardosan\ObjectMap\Tests\ExamplesClasses\CustomerMap;
 
 class GeneralTest extends BaseTest
 {
@@ -11,9 +11,9 @@ class GeneralTest extends BaseTest
         'name' => 'oscar',
         'document_type' => 'cc',
         'document_number' => '000255',
-        'city' => 'Bogota',
-        'state' => 'Bogota',
         'country' => 'Colombia',
+        'city' => 'Moscú',
+        'state' => 'Bogota',
         'car' => 'toyota',
     ];
 
@@ -22,11 +22,8 @@ class GeneralTest extends BaseTest
      */
     public function is_constructWithArray_Working()
     {
-        $objectMap = new BasicExample($this->sample);
-        foreach ($this->sample as $attribute => $value){
-            $this->assertEquals($value, $objectMap->{$attribute});
-        }
-        $this->assertEquals('PHP Company', $objectMap->company);
+        $customerMap = new CustomerMap($this->sample);
+        $this->assertEquals('PHP Company', $customerMap->company);
     }
 
     /**
@@ -34,22 +31,73 @@ class GeneralTest extends BaseTest
      */
     public function is_getAttributtes_Working()
     {
-        $objectMap = new BasicExample($this->sample);
-        $attributes = $objectMap->getAttributes();
+        $customerMap = new CustomerMap($this->sample);
+        $attributes = $customerMap->getAttributes();
 
-        foreach ($attributes as $attribute => $value){
-            $this->assertEquals($value, $attributes[$attribute]);
-        }
         $this->assertEquals('PHP Company', $attributes['company']);
 
-        $this->assertEquals(8, count($objectMap->getAttributes()));
+        $this->assertEquals(8, count($customerMap->getAttributes()));
     }
 
-
-    /*public function is_setter_Working()
+    /**
+     * @test
+     */
+    public function is_get_Working()
     {
-        $objectMap = new BasicExample();
-        $objectMap->company = 'Toyota';
-        //$this->assertEquals('TOYOTA', $objectMap->company);
-    }*/
+        $customerMap = new CustomerMap();
+        $customerMap->car = 'mazda';
+        $this->assertEquals('mazda', $customerMap->car);
+    }
+
+    /**
+     * @test
+     */
+    public function is_magicGet_Working()
+    {
+        $customerMap = new CustomerMap($this->sample);
+        $this->assertEquals('CC', $customerMap->document_type);
+        $customerMap->document_type = 'ti';
+        $this->assertEquals('TI', $customerMap->document_type);
+    }
+
+    /**
+     * @test
+     */
+    public function is_magicGetFromConstruct_Working()
+    {
+        $customerMap = new CustomerMap($this->sample);
+        $this->assertEquals('CC', $customerMap->document_type);
+    }
+
+    /**
+     * @test
+     */
+    public function is_set_Working()
+    {
+        $customerMap = new CustomerMap($this->sample);
+        $customerMap->company = 'C++ Company';
+        $this->assertEquals('C++ Company', $customerMap->company);
+    }
+
+    /**
+     * @test
+     */
+    public function is_magicSet_Working()
+    {
+        $customerMap = new CustomerMap();
+        $customerMap->city = 'Moscú';
+        $this->assertEquals('Rusia', $customerMap->country);
+    }
+
+    /**
+     * @test
+     */
+    public function is_magicSetFromConstruct_Working()
+    {
+        $customerMap = new CustomerMap(['city' => 'Moscú']);
+        $this->assertEquals('Rusia', $customerMap->country);
+
+        $customerMap = new CustomerMap(['city' => 'Bogota']);
+        $this->assertEquals(null, $customerMap->country);
+    }
 }
