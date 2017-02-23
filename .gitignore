@@ -1,0 +1,9 @@
+/.idea
+/.git
+.git/*
+.idea/*
+.idea/
+.git/
+/vendor
+/vendor/*
+/vendor/
