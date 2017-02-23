@@ -1,5 +1,5 @@
 {
-    "name": "oscarsan/object-map",
+    "name": "oscarricardosan/object-map",
     "description": "Paquete PHP que especifica de forma explicita los atributos de un objeto.",
     "license": "MIT",
     "authors": [
@@ -16,12 +16,12 @@
     },
     "autoload": {
       "psr-4": {
-        "Oscarsan\\ObjectMap\\": "src"
+        "Oscarricardosan\\ObjectMap\\": "src"
       }
     },
     "autoload-dev": {
       "psr-4": {
-        "Oscarsan\\ObjectMap\\Tests\\": "tests"
+        "Oscarricardosan\\ObjectMap\\Tests\\": "tests"
       }
     }
 }

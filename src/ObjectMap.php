@@ -1,8 +1,8 @@
 <?php
 
-namespace Oscarsan\ObjectMap;
+namespace Oscarricardosan\ObjectMap;
 
-use Oscarsan\ObjectMap\Interfaces\ObjectMapInterface;
+use Oscarricardosan\ObjectMap\Interfaces\ObjectMapInterface;
 
 abstract class ObjectMap implements ObjectMapInterface
 {

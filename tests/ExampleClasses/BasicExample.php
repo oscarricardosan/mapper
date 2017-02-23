@@ -1,8 +1,8 @@
 <?php
 
-namespace Oscarsan\ObjectMap\Tests\ExamplesClasses;
+namespace Oscarricardosan\ObjectMap\Tests\ExamplesClasses;
 
-use Oscarsan\ObjectMap\ObjectMap;
+use Oscarricardosan\ObjectMap\ObjectMap;
 
 class BasicExample extends ObjectMap
 {

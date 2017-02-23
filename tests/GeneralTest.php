@@ -1,9 +1,9 @@
 <?php
 
-namespace Oscarsan\ObjectMap\Tests;
+namespace Oscarricardosan\ObjectMap\Tests;
 
 
-use Oscarsan\ObjectMap\Tests\ExamplesClasses\BasicExample;
+use Oscarricardosan\ObjectMap\Tests\ExamplesClasses\BasicExample;
 
 class GeneralTest extends BaseTest
 {

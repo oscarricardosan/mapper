@@ -1,6 +1,6 @@
 <?php
 
-namespace Oscarsan\ObjectMap\Interfaces;
+namespace Oscarricardosan\ObjectMap\Interfaces;
 
 
 interface ObjectMapInterface
