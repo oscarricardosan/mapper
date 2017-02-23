@@ -68,10 +68,9 @@ class CustomerMap extends ObjectMap
 }
 ```
 Con lo anterior hemos definido las propiedades del objeto, también hemos 
-dejado valores default a los atributos los cuales no seran modificdos a menos 
-que tu los cambies.
+dejado valores default.
 
-Ya con la clase MapObject definido podemos hacer algo en nuestro repositorio como:
+Ya con la clase MapObject definida podemos hacer algo en nuestro repositorio como:
 
 ```
     #Laravel
@@ -117,7 +116,7 @@ Ya con la clase MapObject definido podemos hacer algo en nuestro repositorio com
         }
     }
 ```
-Esta capa nos permite un mayor control de lo que estamos inyectando a 
+Esta capa nos permite un mayor control de lo que estamos pasando a 
 nuestro repositorio.
 
 ##Metodos
