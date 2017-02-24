@@ -100,6 +100,9 @@ Con lo anterior **$customerMap** ha quedado con las propiedades que estaban en l
 Existen dos formas para cargar valores a una clase que extiende de Mapper:
 
 ####3.2.1. Forma masiva 
+
+Ya sea por el __construct o por setAttributesFromArray, si la propiedad que viene en el array no esta declarada en los DocComments el la omitirá.
+ 
 ```
     $sample = [
         'name' => 'oscar',
@@ -123,6 +126,7 @@ Con el método **setAttributesFromArray**
     $customerMap->setAttributesFromArray($ssample);
     echo($customerMap->name);  => oscar
 ```
+
 
 ####3.2.2. Como propiedad
 
