@@ -32,7 +32,7 @@ Pero cuando tenemos un objeto con demasiados atributos ya no es tan fácil. **¡
     
     }
 ```
-Sin embargo, esto no es para nada explicito, cualquiera que llegue tendrá que hacer seguimiento para es lo que esta llegando en el array $data.
+Sin embargo, esto no es para nada explicito, cualquiera que llegue tendrá que hacer seguimiento para poer entener que es lo que esta llegando en el array $data.
 
 Con Mapper podrías hacer algo así:
 ```
@@ -64,7 +64,7 @@ Ejecutar en consola
 
 ##3. Uso
 
-###3.1. Definir una clase que extienda mapper y tenda DocComments
+###3.1. Definir una clase que extienda Mapper y tenga DocComments
 
 Crea una clase que extienda a Mapper y en DocComments define las propiedades que van a ser mapeadas:
 
@@ -132,18 +132,23 @@ Con el método **setAttributesFromArray**
     echo($customerMap->name);  => oscar
 ```
 **NOTAS:**
-* Si asignas un valor a una propiedad que no estaba definida en los DocComments no tendrá efecto y la propiedad retornara null.
-
+* Si asignas un valor a una propiedad que no esta definida en los DocComments no tendrá efecto y la propiedad retornara null.
 >```
 >    $customerMap->otherProperty = 'value';
 >    var_dump($customerMap->otherProperty);  => NULL
 >```
 
 * Los valores por defecto establecidos en DocComments permaneceran hasta que no los remplazes ya sea por un array[] o de forma directa ->.
+>```
+>    echo($customerMap->company);  => PHP Company
+>    $customerMap->company = 'Cbot' 
+>    echo($customerMap->company);  => Cbot 
+>```
+
 
 ###3.3. Mutators y Accessors
 
-Siguiendo la sintaxis de los modelos en Laravel podemos declarar mutators y accessors en la clase que extiende Mapper. En ellos puedes dejar la lógica que generalmente dejamos en el controlador y por lo cual no puede ser reutilizada. 
+Siguiendo la sintaxis de los modelos en Laravel podemos declarar mutators y accessors en la clase que extiende Mapper. En ellos puedes dejar la lógica para depurar los datos que generalmente nos llegan por request y que se pierde en el controlador al no ser reutilizable. 
 
 ```
 use Oscarricardosan\Mapper\Mapper;
