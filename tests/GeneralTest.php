@@ -30,6 +30,26 @@ class GeneralTest extends BaseTest
     /**
      * @test
      */
+    public function is_setAttributesFromArray_Working()
+    {
+        $customerMap = new CustomerMap();
+        $customerMap->setAttributesFromArray($this->sample);
+        $this->assertEquals('PHP Company', $customerMap->company);
+    }
+
+    /**
+     * @test
+     */
+    public function isnt_setUndefinedAttributes_Working()
+    {
+        $customerMap = new CustomerMap($this->sample);
+        $customerMap->undefinedProperty = 'value';
+        $this->assertEquals(null, $customerMap->undefinedProperty);
+    }
+
+    /**
+     * @test
+     */
     public function is_getAttributtes_Working()
     {
         $customerMap = new CustomerMap($this->sample);
