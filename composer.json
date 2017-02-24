@@ -1,6 +1,6 @@
 {
     "name": "oscarricardosan/mapper",
-    "description": "Paquete PHP que mapea los atributos de un objeto y agrega funcionalidad para agregar mutators y accessors ",
+    "description": "Paquete PHP que mapea los DocComments de la clase y permite definir mutators y accessors ",
     "license": "MIT",
     "authors": [
         {
