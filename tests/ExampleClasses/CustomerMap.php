@@ -1,8 +1,8 @@
 <?php
 
-namespace Oscarricardosan\ObjectMap\Tests\ExamplesClasses;
+namespace Oscarricardosan\Mapper\Tests\ExamplesClasses;
 
-use Oscarricardosan\ObjectMap\ObjectMap;
+use Oscarricardosan\Mapper\Mapper;
 
 /**
  * @property $name
@@ -14,7 +14,7 @@ use Oscarricardosan\ObjectMap\ObjectMap;
  * @property $country
  * @property $car
  */
-class CustomerMap extends ObjectMap
+class CustomerMap extends Mapper
 {
     public function getDocumentTypeAttribute($value)
     {

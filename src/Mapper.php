@@ -1,10 +1,10 @@
 <?php
 
-namespace Oscarricardosan\ObjectMap;
+namespace Oscarricardosan\Mapper;
 
-use Oscarricardosan\ObjectMap\Interfaces\ObjectMapInterface;
+use Oscarricardosan\Mapper\Interfaces\MapperInterface;
 
-abstract class ObjectMap implements ObjectMapInterface
+abstract class Mapper implements MapperInterface
 {
     protected $attributes = [];
 

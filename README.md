@@ -1,8 +1,8 @@
-#Object map
+#Mapper
 
-Un pequeño Paquete PHP agnóstico a frameworks, el cual provee una forma 
-facil para especificar los atributos de un objeto con el fin de ser más explicito 
-en nuestro código, muy diferente a lo que pasa cuando usamos un array.
+Paquete PHP agnóstico a frameworks Provee una forma facil con la cual mapear los atributos especificado  en los DocComments de una clase, también permite agregar funcionalidad extra a tráves de mutators y accesors (setNameAttribute, getNameAttribute) .
+
+
 
 Cuando tienes una entidad con demasiados atributos no los podemos 
 pasar como atributos de la función - O_O te imaginas una función con 20 atributos O_O - 

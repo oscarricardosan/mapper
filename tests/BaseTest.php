@@ -1,6 +1,6 @@
 <?php
 
-namespace Oscarricardosan\ObjectMap\Tests;
+namespace Oscarricardosan\Mapper\Tests;
 
 abstract class BaseTest extends \PHPUnit_Framework_TestCase
 {

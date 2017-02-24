@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Oscarricardosan\ObjectMap;
+namespace Oscarricardosan\Mapper;
 
 
 class DocComment

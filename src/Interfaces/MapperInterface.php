@@ -1,9 +1,9 @@
 <?php
 
-namespace Oscarricardosan\ObjectMap\Interfaces;
+namespace Oscarricardosan\Mapper\Interfaces;
 
 
-interface ObjectMapInterface
+interface MapperInterface
 {
     public function __construct(array $attributes = []);
 

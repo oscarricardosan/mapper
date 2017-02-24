@@ -1,9 +1,10 @@
 <?php
 
-namespace Oscarricardosan\ObjectMap\Tests;
+namespace Oscarricardosan\Mapper\Tests;
 
 
-use Oscarricardosan\ObjectMap\Tests\ExamplesClasses\CustomerMap;
+
+use Oscarricardosan\Mapper\Tests\ExamplesClasses\CustomerMap;
 
 class GeneralTest extends BaseTest
 {
