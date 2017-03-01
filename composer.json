@@ -23,5 +23,7 @@
       "psr-4": {
         "Oscarricardosan\\Mapper\\Tests\\": "tests"
       }
-    }
+    },
+    "minimum-stability" : "dev",
+    "prefer-stable" : true
 }
