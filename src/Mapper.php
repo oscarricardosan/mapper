@@ -7,6 +7,7 @@ use Oscarricardosan\Mapper\Interfaces\MapperInterface;
 abstract class Mapper implements MapperInterface
 {
     protected $attributes = [];
+    protected $alias = [];
 
     public function __construct(array $attributes = [])
     {
@@ -22,16 +23,26 @@ abstract class Mapper implements MapperInterface
     public function setAttributesFromArray(array $attributes = [])
     {
         foreach($attributes as $attribute => $value){
+            $attribute = $this->verificIfExistsAlias($attribute);
             if($this->attributeExists($attribute)){
                 $this->{$attribute} = $value;
             }
         }
     }
 
+    protected function verificIfExistsAlias($attribute)
+    {
+        if(isset($this->alias[$attribute]))
+            return $this->alias[$attribute];
+        else
+            return $attribute;
+    }
+
     public function getAttributes()
     {
         $attributes = [];
         foreach ($this->attributes as $attribute => $value){
+            //Se ejecuta así para que corra los setter establecidos
             $attributes[$attribute] = $this->{$attribute};
         }
         return $attributes;

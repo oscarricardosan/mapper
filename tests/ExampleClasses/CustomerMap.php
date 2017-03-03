@@ -16,6 +16,11 @@ use Oscarricardosan\Mapper\Mapper;
  */
 class CustomerMap extends Mapper
 {
+    protected $alias = [
+        0 => 'name',
+        1 => 'car',
+        2 => 'document_type'
+    ];
     public function getDocumentTypeAttribute($value)
     {
         return strtoupper($value);

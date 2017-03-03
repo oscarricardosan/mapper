@@ -121,4 +121,22 @@ class GeneralTest extends BaseTest
         $customerMap = new CustomerMap(['city' => 'Bogota']);
         $this->assertEquals(null, $customerMap->country);
     }
+
+    /**
+     * @test
+     */
+    public function is_alias_Working()
+    {
+        $customerMap = new CustomerMap(['Oscar', 'Tesla S']);
+    }
+
+    /**
+     * @test
+     */
+    public function is_setterInAlias_Working()
+    {
+        $customerMap = new CustomerMap();
+        $customerMap->setAttributesFromArray(['Oscar', 'Tesla S', 'ti']);
+        $this->assertEquals('TI', $customerMap->document_type);
+    }
 }
