@@ -128,6 +128,9 @@ class GeneralTest extends BaseTest
     public function is_alias_Working()
     {
         $customerMap = new CustomerMap(['Oscar', 'Tesla S']);
+
+        $this->assertEquals('Oscar', $customerMap->name);
+        $this->assertEquals('Tesla S', $customerMap->car);
     }
 
     /**

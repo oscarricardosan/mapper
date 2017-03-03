@@ -34,7 +34,7 @@ Pero cuando tenemos un objeto con demasiados atributos ya no es tan fácil. **¡
 ```
 Sin embargo, esto no es para nada explicito, cualquiera que llegue tendrá que hacer seguimiento para poer entener que es lo que esta llegando en el array $data.
 
-Con Mapper podrías hacer algo así:
+Con Mapper podrías hacer:
 ```
     class Customer{
         public function store(CustomerMap $customerMap){
@@ -193,6 +193,47 @@ $customerMap->city = 'Moscú';
 echo($customerMap->country);  => Rusia
 
 ```
+
+
+###3.4. Alias
+
+En ocaciones leemos datos desde un csv, excel u otros 
+donde los datos de entrada vienen en vector el 
+cual PHP covierte en una array con clave númerica. Para ello mutator permite 
+establecer alias a las propiedades. Para usarlo solo debes usar la 
+propiedad $alias de la clase que extiende mapper y !listo¡, con ellos los mutator y 
+accessors funcionan comun y corriente, con lo cual no solo mapeas el vector y lo a
+asignas a su correspondiente propiedad sino que también lo puedes validar.
+
+```
+/**
+ * @property $name
+ * @property $car
+ * @property $document_type
+ */
+class CustomerMap extends Mapper
+{
+    protected $alias = [
+        0 => 'name',
+        1 => 'car',
+        2 => 'document_type'
+    ];
+    public function getDocumentTypeAttribute($value)
+    {
+        return strtoupper($value);
+    }
+}
+
+//Passing vector
+$customerMap = new CustomerMap(['Oscar', 'Tesla S', 'ti']);
+echo($customerMap->name);  => Oscar
+echo($customerMap->car);  => Tesla S
+echo($customerMap->document_type);  => TI
+
+```
+
+
+
 
 
 ##4. Ejemplo usando un Controlador y un Repositorio
