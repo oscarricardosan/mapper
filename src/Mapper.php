@@ -69,7 +69,7 @@ abstract class Mapper implements MapperInterface
     protected function getValueFromMutator($attribute)
     {
         $method = $this->nameGetMutator($attribute);
-        $value = $this->attributes[$attribute];
+        $value = isset($this->attributes[$attribute])?$this->attributes[$attribute]:null;
         return $this->{$method}($value);
     }
 
