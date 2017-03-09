@@ -24,7 +24,7 @@ abstract class Mapper implements MapperInterface
     {
         foreach($attributes as $attribute => $value){
             $attribute = $this->verificIfExistsAlias($attribute);
-            if($this->attributeExists($attribute)){
+            if($this->attributeExists($attribute) || $this->hasSetMutator($attribute)){
                 $this->{$attribute} = $value;
             }
         }
